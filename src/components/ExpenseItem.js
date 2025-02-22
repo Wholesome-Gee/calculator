@@ -2,7 +2,7 @@ import React from 'react'
 import './ExpenseItem.css'
 import { MdDelete, MdEdit } from 'react-icons/md'
 
-export default function ExpenseItem({expense,handleDelete}) {
+export default function ExpenseItem({expense, handleDelete, handleEdit}) {
     return (
       <li className='item'>
         <div className='info'>
@@ -10,7 +10,7 @@ export default function ExpenseItem({expense,handleDelete}) {
           <span className='amount'>{expense.amount}원</span>
         </div>
         <div>
-          <button className='edit-btn'>
+          <button className='edit-btn' onClick={()=>{handleEdit(expense.id)}}>
             <MdEdit></MdEdit>
           </button>
           <button className='clear-btn'>
